@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TestViewController.h"
 
 @interface ViewController ()
 
@@ -28,15 +29,18 @@
 
 - (IBAction)buglyTest2:(UIButton *)sender {
     
+    TestViewController *testView = [[TestViewController alloc]init];
+    [self.navigationController pushViewController:testView animated:YES];
+
 }
 
 
 - (IBAction)bugly3:(UIButton *)sender {
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

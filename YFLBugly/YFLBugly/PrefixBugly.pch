@@ -15,4 +15,6 @@
 #import <Bugly/Bugly.h>
 
 
+#define std_string(_cs_) ((_cs_ == NULL) ? std::string() : std::string(_cs_))
+
 #endif /* PrefixBugly_pch */
