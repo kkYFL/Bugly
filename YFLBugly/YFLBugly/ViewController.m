@@ -28,7 +28,6 @@
 }
 
 - (IBAction)buglyTest2:(UIButton *)sender {
-    
     TestViewController *testView = [[TestViewController alloc]init];
     [self.navigationController pushViewController:testView animated:YES];
 
