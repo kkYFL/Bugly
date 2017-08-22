@@ -20,6 +20,20 @@
 }
 
 
+- (IBAction)bugTest1:(UIButton *)sender {
+    NSLog(@"it will throw an NSException ");
+    NSArray * array = @[];
+    NSLog(@"the element is %@", array[1]);
+}
+
+- (IBAction)buglyTest2:(UIButton *)sender {
+    
+}
+
+
+- (IBAction)bugly3:(UIButton *)sender {
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -59,6 +59,7 @@
 		3AE28E7F1F4BC83400B973CA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3AE28E811F4BC84A00B973CA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3AE28E831F4BC86600B973CA /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		3AE28E851F4BCE5200B973CA /* PrefixBugly.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixBugly.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +125,7 @@
 				3AE28E561F4BC61300B973CA /* LaunchScreen.storyboard */,
 				3AE28E591F4BC61300B973CA /* Info.plist */,
 				3AE28E481F4BC61300B973CA /* Supporting Files */,
+				3AE28E851F4BCE5200B973CA /* PrefixBugly.pch */,
 			);
 			path = YFLBugly;
 			sourceTree = "<group>";
@@ -464,6 +466,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BuglyFile",
 				);
+				GCC_PREFIX_HEADER = YFLBugly/PrefixBugly.pch;
 				INFOPLIST_FILE = YFLBugly/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -481,6 +484,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BuglyFile",
 				);
+				GCC_PREFIX_HEADER = YFLBugly/PrefixBugly.pch;
 				INFOPLIST_FILE = YFLBugly/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
