@@ -15,6 +15,10 @@
 		3AE28E581F4BC61300B973CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE28E561F4BC61300B973CA /* LaunchScreen.storyboard */; };
 		3AE28E631F4BC61300B973CA /* YFLBuglyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE28E621F4BC61300B973CA /* YFLBuglyTests.m */; };
 		3AE28E6E1F4BC61300B973CA /* YFLBuglyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE28E6D1F4BC61300B973CA /* YFLBuglyUITests.m */; };
+		3AE28E7D1F4BC80100B973CA /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE28E7C1F4BC80100B973CA /* Bugly.framework */; };
+		3AE28E801F4BC83400B973CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE28E7F1F4BC83400B973CA /* SystemConfiguration.framework */; };
+		3AE28E821F4BC84A00B973CA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE28E811F4BC84A00B973CA /* Security.framework */; };
+		3AE28E841F4BC86600B973CA /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE28E831F4BC86600B973CA /* libz.1.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		3AE28E691F4BC61300B973CA /* YFLBuglyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YFLBuglyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE28E6D1F4BC61300B973CA /* YFLBuglyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFLBuglyUITests.m; sourceTree = "<group>"; };
 		3AE28E6F1F4BC61300B973CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE28E7C1F4BC80100B973CA /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
+		3AE28E7F1F4BC83400B973CA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3AE28E811F4BC84A00B973CA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3AE28E831F4BC86600B973CA /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AE28E841F4BC86600B973CA /* libz.1.tbd in Frameworks */,
+				3AE28E821F4BC84A00B973CA /* Security.framework in Frameworks */,
+				3AE28E801F4BC83400B973CA /* SystemConfiguration.framework in Frameworks */,
+				3AE28E7D1F4BC80100B973CA /* Bugly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,10 +93,12 @@
 		3AE28E3C1F4BC61300B973CA = {
 			isa = PBXGroup;
 			children = (
+				3AE28E7B1F4BC6E700B973CA /* BuglyFile */,
 				3AE28E471F4BC61300B973CA /* YFLBugly */,
 				3AE28E611F4BC61300B973CA /* YFLBuglyTests */,
 				3AE28E6C1F4BC61300B973CA /* YFLBuglyUITests */,
 				3AE28E461F4BC61300B973CA /* Products */,
+				3AE28E7E1F4BC83400B973CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,6 +152,24 @@
 				3AE28E6F1F4BC61300B973CA /* Info.plist */,
 			);
 			path = YFLBuglyUITests;
+			sourceTree = "<group>";
+		};
+		3AE28E7B1F4BC6E700B973CA /* BuglyFile */ = {
+			isa = PBXGroup;
+			children = (
+				3AE28E7C1F4BC80100B973CA /* Bugly.framework */,
+			);
+			path = BuglyFile;
+			sourceTree = "<group>";
+		};
+		3AE28E7E1F4BC83400B973CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AE28E831F4BC86600B973CA /* libz.1.tbd */,
+				3AE28E811F4BC84A00B973CA /* Security.framework */,
+				3AE28E7F1F4BC83400B973CA /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,9 +460,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KK5694975F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BuglyFile",
+				);
 				INFOPLIST_FILE = YFLBugly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = YFL.YFLBugly;
+				PRODUCT_BUNDLE_IDENTIFIER = YFL.Test.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -440,9 +477,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KK5694975F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BuglyFile",
+				);
 				INFOPLIST_FILE = YFLBugly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = YFL.YFLBugly;
+				PRODUCT_BUNDLE_IDENTIFIER = YFL.Test.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

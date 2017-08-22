@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import <Bugly/Bugly.h>
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [Bugly startWithAppId:@"f7e4f47c0c"];
+    
     return YES;
 }
 
